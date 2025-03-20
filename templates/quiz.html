@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h2>HvaHoot Quiz</h2>
+    {% for q in questions %}
+        <p>{{ q.question }}</p>
+        <ul>
+            {% for option in q.options %}
+                <li>{{ option }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    <a href="{{ url_for('logout') }}">Logg ut</a>
+</body>
+</html>

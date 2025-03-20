@@ -1,0 +1,6 @@
+<h1>Poengtavle</h1>
+<ul>
+    {% for entry in scores %}
+        <li>{{ entry.username }} - {{ entry.score }} poeng</li>
+    {% endfor %}
+</ul>

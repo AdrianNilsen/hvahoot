@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-    <title>Quiz</title>
-</head>
-<body>
-    <h2>HvaHoot Quiz</h2>
-    {% for q in questions %}
-        <p>{{ q.question }}</p>
-        <ul>
-            {% for option in q.options %}
-                <li>{{ option }}</li>
-            {% endfor %}
-        </ul>
+<h2>Spørsmål {{ index }} av {{ total }}</h2>
+{% if question.image %}
+    <img src="{{ url_for('static', filename=question.image) }}" width="300">
+{% endif %}
+<h3>{{ question.question }}</h3>
+
+{% if feedback %}
+    <p><strong>{{ feedback }}</strong></p>
+{% endif %}
+
+<form method="POST">
+    {% for option in question.options %}
+        <button type="submit" name="answer" value="{{ option }}">{{ option }}</button>
     {% endfor %}
-    <a href="{{ url_for('logout') }}">Logg ut</a>
-</body>
-</html>
+</form>
+
+<a href="{{ url_for('home') }}"><button>Hjem</button></a>

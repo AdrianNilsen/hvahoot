@@ -1,6 +1,9 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: black;
+    color: white;
+
 }
 form {
     display: flex;
@@ -10,4 +13,11 @@ form {
 }
 button {
     margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #0f0;
+    text-shadow: 0 0 15px rgb(4, 143, 4);  
+
 }
